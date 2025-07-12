@@ -594,8 +594,8 @@ nav .fas{
  nav ul{
   background:rgba(61, 139, 255, 0.85);
   position: fixed;
+  right: -100%;
   top: 0;
-  right: 0;
   width: 180px;
   height: 100vh;
   padding-top: 50px;
