@@ -31,6 +31,10 @@ body {
     font-size: 30px;
     margin-left: 55px;
 }
+h1 a {
+  color: inherit;      
+  text-decoration: none; 
+}
 
 #header img {
     max-width: 100%;
@@ -115,17 +119,6 @@ nav ul li a::after {
     bottom: -6px;
     transition: 0.5s;
 }
-
-/* Hamburger Menu Button Styling */
-#menu-btn {
-    display: none; /* Hidden by default on desktop */
-    font-size: 24px;
-    color: #000;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
 
 #header .highlight {
     color: #3D8BFF;
