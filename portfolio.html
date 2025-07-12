@@ -1,28 +1,202 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
     <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
       <title> Personal portfolio website </title>
       <link rel="stylesheet" href="styles.css">
     </head>
-
 <body>
+  <button id="theme-toggle">🌙</button>
     <div id="header">
 <div class="container">
-    <nav> 
-        <img src="./logo.png" class="logo">
-        <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Home</a></li>
+    <nav>
+      <h1> <span class="highlight">SERSA </span>HANI ABDELDJALIL </h1> 
+        <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
         </ul>
-    </nav>
-</div>
+            <i class="fas fa-bars"onclick="openmenu()"></i>
+</nav>
+    <div class="header-text">
+        <p> Full Stack Developer </p>
+        <h2>Hi, I'am <span class="highlight" >SERSA Hani Abdeldjalil</span><br> from Algeria </h2>
+        <a href="cv sersa.pdf" class="download-cv-button" download>
+  <i class="fa-solid fa-file-lines"></i>
+  Download CV
+</a>
     </div>
+</div>
+</div>
+    <div id="about">
+  <div class="container">
+    <div class="row">
+      <div class="about-col-1">
+        <img src="./about.png" />
+      </div>
+      <div class="about-col-2">
+        <h2 class="sub-title">About Me</h2>
+        <p>Computer science student at the Higher National School of Computer Science (ESI).I graduated from secondary school with honors in 2024, scoring 18.77/20 in the Baccalaureate exam and I ranked third in the Biskra Wilaya, Algeria. Passionate about software development, problem solving, and learning new technologies. Currently focused on data structures, algorithms, and full-stack development. I'm actively looking to grow both technically and personally by working on real-world projects and collaborating with others. I'm curious, motivated, and and always eager to improve.
+            <br>I have acquired diverse experiences in the field, and among the most valuable skills I've developed are front-end and back-end development. Every day, I strive to become better than I was yesterday , my passion for learning is the driving force behind everything Ive achieved and everything I aspire to accomplish.
+
+            <br>Some of the key skills I've developed include:
+
+            <br>• Proficiency in arabic , french and english languages
+
+            <br>• Linux operating systems
+
+            <br>• Computer engineering fundamentals
+
+            <br>• Programming languages such as C ,java script and  Assembly
+
+            <br>• A solid understanding of Algebra and Analysis
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-------------------- services---------------------------->
+<div id="services">
+    <div class="container">
+        <h2 class="sub-title">My Services</h2>
+        <div class="services-list">
+            <div class="service-col">
+                <i class="fa-solid fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Creating responsive and user-friendly websites.<br><br><a class="more-details">learn more.</a></p>
+            </div>
+            <div class="service-col">
+                <i class="fa-brands fa-app-store"></i>
+                <h3>App Development</h3>
+                <p>Building mobile applications for Android and iOS.<br><br><a class="more-details">learn more.</a></p>
+            </div>
+            <div class="service-col">
+                <i class="fa-solid fa-crop-simple"></i>
+                <h3>UI/UX Design</h3>
+                <p>Designing intuitive user interfaces and experiences.<br><br><a class="more-details">learn more.</a></p>
+            </div>
+          </div>
+        </div>
+        </div>
+</div>
+<!-- ---------------portfolio--------------->
+<div id="portfolio">
+ <div class="container">
+  <div class="row">
+        <h2 class="sub-title">My Work</h2>
+        <div class="portfolio-list">
+              <img src="./portfolio website.png" alt="screenshot of portfolio website">
+              <a href="https://github.com/hanisersa/portfolio"><i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i></a>
+              <h3>Portfolio website</h3>
+                <p>this is my first website project , This is the personal portfolio website of SERSA hani Abdeldjalil, showcasing web development projects, design skills, and technical experience. Built using HTML, CSS, and JavaScript, this site reflects a growing passion for front-end and back-end development. Explore my work, learn more about my background, and get in touch for collaborations.</p>
+            </div>
+            <!--
+            <div class="portfolio-list"></div>
+                <img src="./project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Description of project 2.</p>
+            </div>
+            <div class="portfolio-list">
+                <img src="./project3.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Description of project 3.</p>
+            </div>                      -------->
+            </div>
+            <div class="see-more-wrapper">
+               <a href="https://github.com/hanisersa?tab=repositories" class="see-more-button">See More</a>
+            </div>
+
+        </div>
+      </div>
+  </div>
+</div>
+<!------------------contact---------------->
+<div id="contact">
+  <div class="container">
+    <div class="row">
+    <div class="contact-left">
+    <h2 class="sub-title">Contact Me</h2>
+    <p><i class="fas fa-paper-plane"></i> haniabdeldjalilsersa@gmail.com</p>
+    <p><i class="fa-solid fa-phone"></i> 0554293993</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/haniabdeldjalilsersa/"><i class="fab fa-facebook"></i></a>
+      <a href="https://github.com/hanisersa"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.instagram.com/hanisersa_/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/hani-abdeldjalil-sersa-416398330/"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div> 
+  <div class="contact-right">
+<form name="submit-to-google-sheet">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+    <button type="submit">Submit</button>
+</form>
+<span id="msg"></span>
+
+</div>
+</div>
+</div>
+<footer>
+    <p>Copyright &copy; <span id="current-year"></span> SERSA HANI ABDELDJALIL | Portfolio website. All Rights Reserved.</p>
+</footer>
+</div>
+
+<script>
+    // Automatically sets the current year in the footer
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+</script>
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+
+  toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️'; 
+    } else {
+      toggleBtn.textContent = '🌙'; 
+    }
+  });
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycby9WvzYciBHy-nmoDKR3F1OAEu_6gsKg0KTJdcjN4Xm0fap2ASqdtWKArX95VaKubo/exec';
+  const form = document.forms['submit-to-google-sheet'];
+  const msg = document.getElementById("msg");
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        msg.innerHTML = "Message sent successfully";
+        setTimeout(function(){
+          msg.innerHTML = "";
+        }, 5000);
+        form.reset();
+      })
+      .catch(error => console.error('Error!', error.message));
+  });
+</script>
+
+<script>
+      var sidemeu = document.getElementById("sidemenu");
+
+function openmenu(){
+   sidemeu.style.right = "0";
+}
+function closemenu(){
+    sidemeu.style.right = "-200px";
+}
+</script>
+
 </body>
 </html>

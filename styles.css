@@ -1,17 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
+    background: #ffffff;
+    color: #000;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#header {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100vh;
+    background-image: url(./background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#header h1 {
+    font-size: 30px;
+    margin-left: 55px;
+}
+
+#header img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    padding-right: 70px;
+    padding-left: 40px;
+}
+  nav {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;;
+  padding: 0px 40px;
+  position: fixed;
+  height: 60px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+}
+#about,
+#services,
+#portfolio,
+#contact {
+  scroll-margin-top: 46px; /* or match your nav height */
+}
+nav ul li a {
+  position: relative;
+  color: black;
+  transition: color 0.2s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #3D8BFF;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.5s ease;
+}
+
+nav ul li a:hover {
+    color: #3D8BFF;
+    transition: 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 15px; /* Adjusted margin for spacing between links */
+}
+
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #3D8BFF;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+/* Hamburger Menu Button Styling */
+#menu-btn {
+    display: none; /* Hidden by default on desktop */
+    font-size: 24px;
+    color: #000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+#header .highlight {
+    color: #3D8BFF;
+}
+
+.header-text {
+    font-size: 25px;
+    margin-top: 17%;
+    margin-left: 40px;
+    color: #000;
+}.header-text {
+  /* Add these three lines to control alignment */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  /* Your existing styles below */
+  font-size: 25px;
+  margin-top: 17%;
+  margin-left: 80px;
+  color: #000;
+}
+
+.header-text p {
+  /* padding-left: 20px;  <-- You can remove this */
+  color: #000;
+}
+
+.header-text h2 {
+  /* padding-left: 17px;  <-- You can remove this */
+  font-size: 35px;
+  margin-top: 20px;
+  color: #000;
+  padding-bottom: 20px;
+}
+.download-cv-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 50px; /* Rounded corners for a modern look */
+  border: none;
+  cursor: pointer;
+  
+  /* Color and Glow */
+  background-color: #3D8BFF; /* The vibrant purple color */
+  box-shadow: 0 4px 15px rgba(61, 139, 255, 0.4); /* This creates the subtle glow */
+  
+  /* Text & Font */
+  color: white;
+  font-family: Arial, Helvetica, sans-serif; /* Or your website's font */
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none; /* Removes the underline from the link */
+  
+  /* Smooth Transition Effect */
+  transition: all 0.3s ease;
+}
+
+/* Style for the icon */
+.download-cv-button .fa-file-lines {
+  margin-right: 10px; /* Adds space between the icon and the text */
+  font-size: 18px; /* Slightly larger icon */
+  padding-left: 10px;
+}
+
+/* Optional: Add a hover effect to make it interactive */
+.download-cv-button:hover {
+  transform: translateY(-2px); /* Lifts the button slightly */
+  box-shadow: 0 6px 20px rgba(106, 53, 246, 0.5); /* Increases the glow */
+}
+
+/* About Section */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+    padding-left: 60px;
+}
+
+#about img {
+    margin-left:60px;
+    margin-top:15px;
+    width: 350px;
+    height: 520px;
+    border-radius: 15px;
+}
+
+.sub-title {
+    font-size: 50px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* Services Section */
+.services-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 40px;
+    margin-top: 50px;
+}
+.more-details{
+    cursor: pointer
+}
+
+.service-col {
+    flex: 1;
+    max-width: 30%;
+    background: #f2f2f2;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-bottom: 120px;
+}
+
+.service-col img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+
+.services-list h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+.services-list p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+}
+
+.services-list div:hover {
+    transform: scale(1.05);
+    background-color: #3D8BFF;
+    transition: transform 0.3s ease;
+}
+
+/*for dark mode to*/
+body.dark-mode .service-col:hover {
+    background-color: #3D8BFF;
+    color: #fff;
+}
+
+body.dark-mode .service-col:hover i {
+    color: #fff;
+}
+
+body.dark-mode .service-col:hover h3 {
+    color: #fff;
+}
+
+body.dark-mode .service-col:hover p {
+    color: #fff;
+}
+
+.service-col i {
+  font-size: 80px;
+  margin-bottom: 30px;
+  display: block;
+  transition: color 0.3s ease;
+}
+/* Light mode */
+body:not(.dark-mode) .service-col i {
+  color: #000;
+}
+
+/* Dark mode */
+body.dark-mode .service-col i {
+  color: #fff;
+}
+/* Portfolio Section */
+.portfolio-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left:50px;
+}
+.portfolio-list h3{
+    font-size:24px;
+}
+.portfolio-list img {
+    height:250px;
+    width:550px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-radius: 15px;
+    margin-left:200px;
+}
+.link-arrow {
+    font-size:30px;
+    margin-left:100px;
+    color: inherit;
+}
+.see-more-wrapper {
+  text-align: center;
+  margin-top:15px;
+  margin-bottom:40px;
+}
+
+.see-more-button {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3D8BFF;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(61, 139, 255, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.see-more-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(61, 139, 255, 0.5);
+}
+/*---------contact-----------------*/
+.contact-left{
+flex-basis: 35%;
+margin-left:40px;
+}
+.contact-right{
+flex-basis: 60%;
+display: flex;
+}
+#msg{
+  position:absolute;
+  color: #61b761;
+margin-top:410px;
+margin-left:230px;
+display: block;
+}
+.contact-left p {
+    margin-top: 30px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+}
+.contact-right button {
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3D8BFF;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(61, 139, 255, 0.3); 
+  transition: all 0.3s ease;
+  text-decoration: none; 
+  margin-left:30px;
+}
+
+.contact-right button:hover {
+  background-color: #0056b3; /* darker on hover */
+  box-shadow: 0 10px 30px rgba(61, 139, 255, 0.5);
+  transform: translateY(-2px);
+}
+.contact-right button:hover{
+    background-color: #3D8BFF;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+.social-icons a{
+text-decoration: none;
+font-size: 30px;
+margin-right: 15px;
+color: #ababab;
+display: inline-block;
+}
+.social-icons a:hover{
+color: #3D8BFF;
+transform: translateY(-5px);
+}
+form input, form textarea{
+width: 100%;
+border: 0;
+outline: none;
+background: #262626;
+padding: 15px;
+margin: 15px 0;
+color: #fff;
+font-size: 18px;
+border-radius: 6px;
+}
+footer {
+  width: 100%;
+  background: #262626;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top:36px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 0.5px; /* Optional: Adds a bit of spacing for a cleaner look */
+}
+/*--------------------------dark mode button-------------------------------------*/
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    width: 50px;         /* same width */
+    height: 50px;        /* and height for a circle */
+    border-radius: 50%;  /* makes it a circle */
+
+    background-color: #222;
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    text-align: center;
+    line-height: 50px;   /* vertically center the icon */
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #444;
+    transform: scale(1.1);
+}
+
+body.dark-mode {
     background: #080808;
     color: #fff;
 }
-#header {
-    width: 100%;
+
+body.dark-mode #header {
+    background-image: url(./background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #080808;
+}
+body.dark-mode nav {
+  background-color: #111;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+body.dark-mode nav ul li a {
+    color: #fff;
+}
+
+body.dark-mode nav ul li a:hover {
+    color: #3D8BFF;
+}
+
+body.dark-mode .sub-title,
+body.dark-mode .sub-title1,
+body.dark-mode .header-text h2,
+body.dark-mode .header-text p,
+body.dark-mode .highlight {
+    color: #fff;
+}
+
+body.dark-mode .service-col {
+    background-color: #111;
+}
+
+body.dark-mode .services-list h3,
+body.dark-mode .services-list p {
+    color: #fff;
+}
+nav .fas{
+  display:none;
+}
+
+/*------------------------------phone mode ( small screen) ----------------------------*/
+@media only screen and (max-width: 600px) {
+  
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  body.dark-mode #header,#header {
     height: 100vh;
-    background-image: url(./logo.png);
-    background-size: contain; /* Changed from cover to contain */
-    background-position: center;
-} 
+    background-image: url(./phone-background.png);
+    background-size: 110%; 
+    background-position: center 35vh;
+    display: flex;
+    padding-top: 80px; 
+    align-items: center;
+  }
+  nav ul li a::after {
+    background: #fff; /* white underline for mobile */
+  }
+
+  nav ul li a:hover {
+    color: #fff; /* white text hover for mobile */
+  }
+   nav .fas{
+      display: block;
+      font-size: 25px;
+    }
+  .header-text {
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  
+  #header h1 {
+    font-size: 18px;
+    margin: 0;
+    text-align: left;
+    flex-grow: 1;
+  }
+  
+  
+  .header-text h2 {
+    font-size: 24px;
+  }
+
+  .download-cv-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-left:60px;
+  }
+  nav {
+    padding: 0 20px;
+  }
+
+  /* Show hamburger menu and hide normal nav links */
+  #menu-btn {
+      display: block; /* Show the hamburger button */
+      z-index: 10001; /* Ensure it's above the nav overlay */
+  }
+
+  body.dark-mode #menu-btn {
+      color: #fff;
+  }
+   
+ nav ul{
+  background:rgba(61, 139, 255, 0.85);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 100vh;
+  padding-top: 50px;
+  transition: right 0.5s;
+  backdrop-filter: blur(10px);
+}
+nav ul li{
+    display: block;
+    text-align: center;
+    margin: 25px;
+}
+nav ul .fas{
+     position:
+     absolute;
+     top: 25px;
+     left: 25px;
+     cursor:pointer;
+}
+
+  nav ul.active {
+      right: 0; /* Slide in */
+  }
+
+  nav ul li {
+      margin: 20px 0;
+  }
+  nav ul li a {
+      font-size: 24px;
+  }
+
+  body.dark-mode nav ul {
+      background-color: rgba(8, 8, 8, 0.95);
+  }
+
+
+  #about {
+    padding: 40px 20px;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-col-1, .about-col-2 {
+    flex-basis: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  #about img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto 20px;
+  }
+
+  .sub-title, .sub-title1 {
+    font-size: 32px;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .services-list {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  .service-col {
+    margin: 0;
+    max-width: 90%;
+  }
+
+  .portfolio-list {
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px 0 0 0;
+    align-items: center;
+    padding: 0;
+    overflow:hidden;;
+  }
+  .portfolio-list p{
+    text-align: center;
+  }
+ 
+
+  .portfolio-list img {
+    width: 300px;
+    height: 150px;
+    margin: 0;
+  }
+  
+
+  .see-more-wrapper {
+  width: 100%; 
+  text-align: center; 
+  margin-top: 20px; 
+}
+
+  .contact-left, .contact-right {
+    flex-basis: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+  .contact-right form {
+    margin: 0 auto;
+  }
+  .contact-right button {
+    margin-left: 0;
+  }
+
+  #theme-toggle {
+    bottom: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
