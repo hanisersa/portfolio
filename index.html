@@ -188,20 +188,34 @@
 </script>
 
 <script>
-      var sidemeu = document.getElementById("sidemenu");
+  const sidemeu = document.getElementById("sidemenu");
+  const sidemenuLinks = sidemeu.querySelectorAll("a");
 
-function openmenu(){
-   sidemeu.style.right = "0";
-}
-function closemenu(){
+  function openmenu() {
+    sidemeu.style.right = "0";
+  }
+
+  function closemenu() {
     sidemeu.style.right = "-200px";
-}
-const sidemenuLinks = sidemeu.querySelectorAll("a");
+  }
 
+  // ✅ Close menu when clicking a link inside the sidemenu
   sidemenuLinks.forEach(link => {
     link.addEventListener("click", closemenu);
   });
+
+  // ✅ Close menu when clicking outside the sidemenu
+  document.addEventListener("click", function (event) {
+    const clickedInsideMenu = sidemeu.contains(event.target);
+    const clickedToggleIcon = event.target.closest(".fa-bars"); // your menu icon
+
+    if (!clickedInsideMenu && !clickedToggleIcon && sidemeu.style.right === "0px") {
+      closemenu();
+    }
+  });
 </script>
+
+
 
 </body>
 </html>
