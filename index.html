@@ -15,16 +15,17 @@
     <div id="header">
 <div class="container">
     <nav>
-     <h1><a href="#header"><span class="highlight">SERSA</span> HANI ABDELDJALIL</a></h1>
-        <ul id="sidemenu">
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <i class="fas fa-times" onclick="closemenu()"></i>
-        </ul>
-            <i class="fas fa-bars"onclick="openmenu()"></i>
+  <h1><a href="#header"><span class="highlight">SERSA</span> HANI ABDELDJALIL</a></h1>
+  
+  <ul id="sidemenu">
+    <li><a href="#header">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+    </ul>
+  
+  <i id="menu-btn" class="fas fa-bars" onclick="toggleMenu()"></i>
 </nav>
     <div class="header-text">
         <p> Full Stack Developer </p>
@@ -190,34 +191,43 @@
 </script>
 
 <script>
-  const sidemeu = document.getElementById("sidemenu");
-  const sidemenuLinks = sidemeu.querySelectorAll("a");
+  // Get the menu and the button by their ID
+  const sidemenu = document.getElementById("sidemenu");
+  const menuBtn = document.getElementById("menu-btn");
 
-  function openmenu() {
-    sidemeu.style.right = "0";
+  // This function opens and closes the menu, and toggles the icon
+  function toggleMenu() {
+    sidemenu.classList.toggle('active');
+    
+    if (menuBtn.classList.contains("fa-bars")) {
+      menuBtn.classList.remove("fa-bars");
+      menuBtn.classList.add("fa-times");
+    } else {
+      menuBtn.classList.remove("fa-times");
+      menuBtn.classList.add("fa-bars");
+    }
   }
 
-  function closemenu() {
-    sidemeu.style.right = "-200px";
-  }
-
-  // ✅ Close menu when clicking a link inside the sidemenu
-  sidemenuLinks.forEach(link => {
-    link.addEventListener("click", closemenu);
+  // --- Feature 1: Close the menu when a link is clicked ---
+  const menuLinks = document.querySelectorAll('#sidemenu a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Check if the menu is open before trying to close it
+      if (sidemenu.classList.contains('active')) {
+        toggleMenu();
+      }
+    });
   });
 
-  // ✅ Close menu when clicking outside the sidemenu
-  document.addEventListener("click", function (event) {
-    const clickedInsideMenu = sidemeu.contains(event.target);
-    const clickedToggleIcon = event.target.closest(".fa-bars"); // your menu icon
-
-    if (!clickedInsideMenu && !clickedToggleIcon && sidemeu.style.right === "0px") {
-      closemenu();
+  // --- Feature 2: Close the menu when clicking outside of it ---
+  window.addEventListener('click', function(event) {
+    // Check if the menu is open AND if the click was outside the menu AND outside the button
+    if (sidemenu.classList.contains('active') && !sidemenu.contains(event.target) && !menuBtn.contains(event.target)) {
+      toggleMenu();
     }
   });
+
 </script>
-
-
 
 </body>
 </html>

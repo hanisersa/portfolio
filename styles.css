@@ -14,9 +14,17 @@ body {
     color: #000;
     transition: background 0.3s ease, color 0.3s ease;
 }
+#fluid-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* This is crucial to place it behind your content */
+}
 
 #header {
-    background-color: #ffffff;
+    background-color: transparent;
     width: 100%;
     height: 100vh;
     background-image: url(./background.png);
@@ -70,12 +78,21 @@ h1 a {
 #contact {
   scroll-margin-top: 46px; /* or match your nav height */
 }
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 15px;
+}
 nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
   position: relative;
-  color: black;
   transition: color 0.2s ease;
 }
-
+nav ul li a:hover {
+  color: #3D8BFF;
+}
 nav ul li a::after {
   content: '';
   width: 0;
@@ -86,56 +103,17 @@ nav ul li a::after {
   bottom: -6px;
   transition: width 0.5s ease;
 }
-
-nav ul li a:hover {
-    color: #3D8BFF;
-    transition: 0.2s;
-}
-
 nav ul li a:hover::after {
   width: 100%;
 }
-
-
-nav ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 0 15px; /* Adjusted margin for spacing between links */
-}
-
-nav ul li a {
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-  position: relative;
-}
-nav ul li a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #3D8BFF;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
-}
-
 #header .highlight {
     color: #3D8BFF;
 }
 
 .header-text {
-    font-size: 25px;
-    margin-top: 17%;
-    margin-left: 40px;
-    color: #000;
-}.header-text {
-  /* Add these three lines to control alignment */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-  /* Your existing styles below */
   font-size: 25px;
   margin-top: 17%;
   margin-left: 80px;
@@ -143,7 +121,6 @@ nav ul li a::after {
 }
 
 .header-text p {
-  /* padding-left: 20px;  <-- You can remove this */
   color: #000;
 }
 
@@ -369,9 +346,9 @@ display: flex;
 #msg{
   position:absolute;
   color: #61b761;
-margin-top:410px;
-margin-left:230px;
-display: block;
+  margin-top: 410px;
+  margin-left: 230px;
+  display: block;
 }
 .contact-left p {
     margin-top: 30px;
@@ -484,7 +461,7 @@ body.dark-mode #header {
     background-image: url(./background.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #080808;
+    background-color: transparent;
 }
 body.dark-mode nav {
   background-color: #111;
@@ -520,12 +497,22 @@ nav .fas{
   display:none;
 }
 
-/*------------------------------phone mode ( small screen) ----------------------------*/
+/*------------------------------phone mode ( small screen ) ----------------------------*/
 @media only screen and (max-width: 600px) {
   
   .container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  #theme-toggle {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    bottom: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
   }
   body.dark-mode #header,#header {
     height: 100vh;
@@ -573,17 +560,31 @@ nav .fas{
   nav {
     padding: 0 20px;
   }
+  
 
-  /* Show hamburger menu and hide normal nav links */
-  #menu-btn {
-      display: block; /* Show the hamburger button */
-      z-index: 10001; /* Ensure it's above the nav overlay */
-  }
-
-  body.dark-mode #menu-btn {
-      color: #fff;
-  }
-   
+  /* This is the new rule for your professional button */
+/* --- 1. Default State (Simple & Transparent) --- */
+#menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background: transparent;
+  border: none;
+  border-radius: 50%; 
+  color: #000;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+#menu-btn:active {
+  transform: scale(0.9); 
+  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black (looks gray) */
+}
+body.dark-mode #menu-btn {
+  color: #fff; 
+}
  nav ul{
   background:rgba(61, 139, 255, 0.85);
   position: fixed;
@@ -601,8 +602,7 @@ nav ul li{
     margin: 25px;
 }
 nav ul .fas{
-     position:
-     absolute;
+     position: absolute;
      top: 25px;
      left: 25px;
      cursor:pointer;
