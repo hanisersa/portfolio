@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+/* Remove outline, box-shadow, and tap highlight from ALL elements on mobile devices */
+@media (pointer: coarse) {
+  *:focus,
+  *:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
 
 * {
     margin: 0;
