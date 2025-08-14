@@ -451,6 +451,11 @@ footer p {
     background-color: #444;
     transform: scale(1.1);
 }
+#theme-toggle:active {
+      transform: scale(0.95);
+      background-color: #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
 
 body.dark-mode {
     background: #080808;
