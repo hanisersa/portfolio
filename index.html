@@ -5,18 +5,24 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
-      <title> Personal portfolio website </title>
+      <title> SERSA HANI ABDELDJALIL </title>
       <link rel="stylesheet" href="styles.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
       <link rel="icon" type="image/png" sizes="16x16" href="./favicon.ico">
+      
+      <!-- Framer Motion for Web -->
+      <script type="module">
+        import { animate, stagger, inView } from "https://esm.sh/framer-motion@11";
+        window.FramerMotion = { animate, stagger, inView };
+      </script>
     </head>
 <body>
   <button id="theme-toggle">🌙</button>
     <div id="header">
 <div class="container">
     <nav>
-  <h1><a href="#header"><span class="highlight">SERSA</span> HANI ABDELDJALIL</a></h1>
-  
+  <h1><a class='title' href="#header"><span class="highlight">SERSA</span> HANI ABDELDJALIL</a></h1>
+
   <ul id="sidemenu">
     <li><a href="#header">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -25,12 +31,14 @@
     <li><a href="#contact">Contact</a></li>
     </ul>
   
-  <i id="menu-btn" class="fas fa-bars" onclick="toggleMenu()"></i>
+  <i id="menu-btn" class="fas fa-bars motion-icon" onclick="toggleMenu()"></i>
 </nav>
     <div class="header-text">
         <p> Full Stack Developer </p>
-        <h2>Hi, I'am <span class="highlight" >SERSA Hani Abdeldjalil</span><br> from Algeria </h2>
-        <a href="cv sersa.pdf" class="download-cv-button" download>
+        <h2 class="header-text">
+          <span id="type1"></span><span id="type2" style="color: #3D8BFF;"></span><span id="type3"></span>
+        </h2>
+        <a href="cv sersa.pdf" class="download-cv-button motion-icon" download>
   <i class="fa-solid fa-file-lines"></i>
   Download CV
 </a>
@@ -41,24 +49,12 @@
   <div class="container">
     <div class="row">
       <div class="about-col-1">
-        <img src="./about.png" />
+        <img src="./about.png" class="motion-image" />
       </div>
       <div class="about-col-2">
         <h2 class="sub-title">About Me</h2>
-        <p>Computer science student at the Higher National School of Computer Science (ESI).I graduated from secondary school with honors in 2024, scoring 18.77/20 in the Baccalaureate exam and I ranked third in the Biskra Wilaya, Algeria. Passionate about software development, problem solving, and learning new technologies. Currently focused on data structures, algorithms, and full-stack development. I'm actively looking to grow both technically and personally by working on real-world projects and collaborating with others. I'm curious, motivated, and and always eager to improve.
+        <p>A Second Year Computer science student at the Higher National School of Computer Science (ESI). Passionate about software development, problem solving, and learning new technologies. Currently focused on data structures, algorithms, and full-stack development. I'm actively looking to grow both technically and personally by working on real-world projects and collaborating with others. I'm curious, motivated, and and always eager to improve.
             <br>I have acquired diverse experiences in the field, and among the most valuable skills I've developed are front-end and back-end development. Every day, I strive to become better than I was yesterday , my passion for learning is the driving force behind everything Ive achieved and everything I aspire to accomplish.
-
-            <br>Some of the key skills I've developed include:
-
-            <br>• Proficiency in arabic , french and english languages
-
-            <br>• Linux operating systems
-
-            <br>• Computer engineering fundamentals
-
-            <br>• Programming languages such as C ,java script and  Assembly
-
-            <br>• A solid understanding of Algebra and Analysis
         </p>
       </div>
     </div>
@@ -70,17 +66,17 @@
         <h2 class="sub-title">My Services</h2>
         <div class="services-list">
             <div class="service-col">
-                <i class="fa-solid fa-code"></i>
+                <i class="fa-solid fa-code motion-icon"></i>
                 <h3>Web Development</h3>
                 <p>Creating responsive and user-friendly websites.</p>
             </div>
             <div class="service-col">
-                <i class="fa-brands fa-app-store"></i>
+                <i class="fa-brands fa-app-store motion-icon"></i>
                 <h3>App Development</h3>
                 <p>Building mobile applications for Android and iOS.</p>
             </div>
             <div class="service-col">
-                <i class="fa-solid fa-crop-simple"></i>
+                <i class="fa-solid fa-crop-simple motion-icon"></i>
                 <h3>UI/UX Design</h3>
                 <p>Designing intuitive user interfaces and experiences.</p>
             </div>
@@ -94,8 +90,8 @@
   <div class="row">
         <h2 class="sub-title">My Work</h2>
         <div class="portfolio-list">
-              <img src="./portfolio website.png" alt="screenshot of portfolio website">
-              <a href="https://github.com/hanisersa/portfolio"><i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i></a>
+              <img src="./portfolio website.png" alt="screenshot of portfolio website" class="motion-image">
+              <a href="https://github.com/hanisersa/portfolio"><i class="fa-solid fa-arrow-up-right-from-square link-arrow motion-icon"></i></a>
               <h3>Portfolio website</h3>
                 <p>this is my first website project , This is the personal portfolio website of SERSA hani Abdeldjalil, showcasing web development projects, design skills, and technical experience. Built using HTML, CSS, and JavaScript, this site reflects a growing passion for front-end and back-end development. Explore my work, learn more about my background, and get in touch for collaborations.</p>
             </div>
@@ -125,13 +121,13 @@
     <div class="row">
     <div class="contact-left">
     <h2 class="sub-title">Contact Me</h2>
-    <p><i class="fas fa-paper-plane"></i> haniabdeldjalilsersa@gmail.com</p>
-    <p><i class="fa-solid fa-phone"></i> 0554293993</p>
+    <p><i class="fas fa-paper-plane motion-icon"></i> haniabdeldjalilsersa@gmail.com</p>
+    <p><i class="fa-solid fa-phone motion-icon"></i> 0554293993</p>
     <div class="social-icons">
-      <a href="https://www.facebook.com/haniabdeldjalilsersa/"><i class="fab fa-facebook"></i></a>
-      <a href="https://github.com/hanisersa"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.instagram.com/hanisersa_/"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/hani-abdeldjalil-sersa-416398330/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.facebook.com/haniabdeldjalilsersa/"><i class="fab fa-facebook motion-icon"></i></a>
+      <a href="https://github.com/hanisersa"><i class="fa-brands fa-github motion-icon"></i></a>
+      <a href="https://www.instagram.com/hanisersa_/"><i class="fab fa-instagram motion-icon"></i></a>
+      <a href="https://www.linkedin.com/in/hani-abdeldjalil-sersa-416398330/"><i class="fab fa-linkedin motion-icon"></i></a>
     </div>
   </div> 
   <div class="contact-right">
@@ -152,5 +148,6 @@
 </div>
 
 <script src="script.js"></script>
+<script src="motion.js"></script>
 </body>
 </html>
