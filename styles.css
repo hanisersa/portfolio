@@ -293,8 +293,8 @@ nav ul li a:hover::after {
     border-color: #3D8BFF;
     box-shadow: 
         0 0 20px rgba(61, 139, 255, 0.6),
-        0 0 40px rgba(61, 139, 255, 0.4),
-        0 0 60px rgba(61, 139, 255, 0.2);
+        0 0 15px rgba(61, 139, 255, 0.4),
+        0 0 10px rgba(61, 139, 255, 0.2);
     transform: translateY(-3px);
 }
 
@@ -839,6 +839,9 @@ body.dark-mode nav ul {
     flex-basis: 100%;
     padding: 0;
     text-align: center;
+  }
+  #about p {
+    text-align: left;
   }
 
   #about img {
