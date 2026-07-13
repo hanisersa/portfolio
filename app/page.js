@@ -24,6 +24,9 @@ import {
 const scriptURL =
   "https://script.google.com/macros/s/AKfycby9WvzYciBHy-nmoDKR3F1OAEu_6gsKg0KTJdcjN4Xm0fap2ASqdtWKArX95VaKubo/exec";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const assetPath = (path) => `${basePath}${path}`;
+
 const skills = [
   {
     name: "Python",
@@ -100,7 +103,7 @@ const projects = [
     title: "Takaful",
     description:
       "A full-stack hackathon platform built as a community solution for Palestinians in Gaza. It lets people offer skills, earn points, request help, and stay connected through profiles, dashboards, requests, reviews, and safety pages.",
-    image: "/Takaful.png",
+    image: assetPath("/Takaful.png"),
     imagePosition: "center top",
     href: "https://takaful-five.vercel.app/",
     tags: ["Full Stack", "Hackathon", "Community"]
@@ -109,7 +112,7 @@ const projects = [
     title: "Nexus Grid Presentation",
     description:
       "A presentation-focused version of the same gaming concept, explaining the project sections, design choices, technologies, and audience in a clean visual format.",
-    image: "/Nexus Grid Gaming coffe.png",
+    image: assetPath("/Nexus Grid Gaming coffe.png"),
     imagePosition: "center center",
     href: "https://v0-nexus-grid-landing-page.vercel.app/",
     tags: ["Presentation", "UI", "Case Study"]
@@ -118,7 +121,7 @@ const projects = [
     title: "Portfolio website",
     description:
       "My personal portfolio site, built to present my background, skills, and contact details with a clean responsive layout.",
-    image: "/portfolio website.png",
+    image: assetPath("/portfolio website.png"),
     imagePosition: "center top",
     href: "https://github.com/hanisersa/portfolio",
     tags: ["HTML", "CSS", "JavaScript"]
@@ -269,7 +272,7 @@ export default function Home() {
             <span>{typedText.slice(introLength + nameLength)}</span>
             <span className="typing-caret" />
           </h1>
-          <a href="/cv sersa.pdf" className="download-cv-button" download>
+          <a href={assetPath("/cv sersa.pdf")} className="download-cv-button" download>
             <FaFileAlt />
             Download CV
           </a>
@@ -286,7 +289,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.8 }}
             >
-              <Image src="/About-new.jpg" alt="Portrait" width={430} height={460} priority />
+              <Image src={assetPath("/About-new.jpg")} alt="Portrait" width={430} height={460} priority />
             </motion.div>
 
             <motion.div
