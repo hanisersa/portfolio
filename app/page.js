@@ -301,7 +301,7 @@ export default function Home() {
             >
               <h2 className="sub-title">About Me</h2>
               <p>
-                A Second Year Computer science student at the Higher National School of Computer Science
+                A Third Year Computer science student at the Higher National School of Computer Science
                 (ESI). Passionate about software development, problem solving, and learning new technologies.
                 Currently focused on data structures, algorithms, and full-stack development. I&apos;m actively
                 looking to grow both technically and personally by working on real-world projects and
